@@ -40,7 +40,7 @@ int main(){
     //question vi) d -= 1.5 * 3 + a++;
     d -= 1.5 * 3 + a++;
     cout<<"d = "<<d<<endl;
-    //answer for vi) is d = 4.5
+    //answer for vi) is d = -4.5
     
     return 0;
 }
