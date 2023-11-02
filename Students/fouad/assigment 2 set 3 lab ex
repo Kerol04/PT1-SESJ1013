@@ -1,0 +1,42 @@
+#include <iostream>
+
+int main() {
+    using namespace std;
+
+    int num, product = 1;
+
+    cout << "WELCOME" << endl;
+
+    // Read an integer from the user
+    cout << "Enter an integer: ";
+    cin >> num;
+
+    int originalNum = num;  // Store the original number for displaying the result
+
+    // Calculate the product of digits
+    while (num != 0) {
+        int digit = num % 10;  // Get the last digit
+        product *= digit;     // Update the product
+        num /= 10;            // Remove the last digit
+    }
+
+    // Display the original number and its digit product
+    cout << "The product of digits for " << originalNum << " is: " << product << endl;
+
+    // Check if the product is a multiple of 4, 5, and/or 7
+    if (product % 4 == 0) {
+        cout << "The product of digits is a multiple of 4." << endl;
+    }
+
+    if (product % 5 == 0) {
+        cout << "The product of digits is a multiple of 5." << endl;
+    }
+
+    if (product % 7 == 0) {
+        cout << "The product of digits is a multiple of 7." << endl;
+    }
+
+    cout << "THANK YOU , SEE YOU SOON" << endl;
+
+    return 0;
+}

@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+int number;
+
+
+cout << "Enter an integer number:" << endl;
+cin >> number;
+
+int product = 1;
+int n=number;
+while (n != 0) {
+ product *= n % 10;
+ n /= 10;
+}
+
+cout << "product of digits " << product << endl;
+if (product %2 == 0){
+cout << "Product " << product << " is even." << endl;
+}
+if (product %2 != 0){
+cout << "Product " << product << " is odd." << endl;
+}
+
+if (product %4 == 0){
+cout << "Product " << product << " is multiple of 4." << endl;
+}
+else {
+cout << "Product " << product << " is not a multiple of 4." << endl;
+}
+if (product %5 == 0){
+ cout << "Product " << product << " is multiple of 5." << endl;
+}
+else {
+ cout << "Product " << product << " is not multiple of 5." << endl;
+}
+if (product %7 == 0){
+ cout << "Product " << product << " is multiple of 7." << endl;
+}
+else {
+ cout << "Product " << product << " is not multiple of 7." << endl;
+}
+
+cout << "Thank you" << endl;
+
+
+
+return 0;
+}
