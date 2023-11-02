@@ -1,4 +1,4 @@
-#include
+#include <iostream>
 using namespace std;
 
 int main(){
@@ -12,7 +12,7 @@ int main(){
     cin >> num2;
     cout << "Enter a single character: ";
     cin >> aph1;
-    cou << "Enter an array of character: ";
-    cin >> aph2;
+    cout << "Enter an array of character: ";
+    cin >> aph2
     return 0;
 }

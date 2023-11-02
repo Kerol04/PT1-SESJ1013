@@ -7,6 +7,7 @@ int main(){
 
     while(i<6){
 
+
         switch(i){
             case 0:
                 a = 46/9;//question 1
