@@ -1,0 +1,32 @@
+#include <iostream>
+
+int main() {
+  int sum =0;
+  int number;
+    
+  std::cout << "Enter an integer number: "; 
+  std::cin >> number;
+  
+   while (number > 0) {
+        sum += number % 10;
+        number /= 10;
+   }
+   
+  std::cout << "Sum of the digets: " << sum << std::endl;
+   
+   if (sum % 2==0) {
+       std::cout <<" The sum is even" << std::endl;
+   }   else {
+      std:: cout << "The sum is odd" << std::endl;
+   }
+   
+   if (sum % 4==0) {
+       std::cout << "The sum is a multiple of 4" << std::endl;
+   }
+
+   if (sum % 5==0) {
+       std::cout << "The sum is a multiple of 5" << std::endl;
+   }
+   return 0;
+}
+ 

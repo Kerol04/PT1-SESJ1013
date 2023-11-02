@@ -1,0 +1,28 @@
+#include <iostream>
+
+int main() {
+  int sum;
+  int number;
+    
+  std::cout << "Enter an integer number: "; 
+  std::cin >> number;
+  
+   while (number > 0) {
+        sum += number % 10;
+        number /= 10;
+   }  
+   std::cout <<"sum of the digets: " << sum << std::endl;  
+   
+   if (sum % 3 == 0) {
+       std::cout << "The sum of digits is a multiple of 3." << std::endl;
+   }
+   if (sum % 4 == 0) {
+       std::cout << "The sum of digits is a multiple of 4." << std::endl;
+   }
+   if (sum % 5 == 0) {
+       std::cout << "The sum of digits is a multiple of 5." << std::endl;
+   }
+
+    return 0;
+
+}

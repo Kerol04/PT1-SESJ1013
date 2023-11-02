@@ -1,0 +1,39 @@
+#include <iostream>
+
+int main() {
+    using namespace std; // Added for cout
+
+    int num, originalNum, sum = 0;
+    cout << "WELCOME" << endl;
+
+    // Read an integer number from the user
+    cout << "Enter an integer number: ";
+    cin >> num;
+
+    // Store the original number for reference
+    originalNum = num;
+
+    // Calculate the sum of its digits
+    do {
+        int digit = num % 10;
+        sum += digit;
+        num /= 10;
+    } while (num != 0);
+
+    // Display the sum of digits
+    cout << "The sum of the digits is: " << sum << endl;
+
+    // Check if the sum is a multiple of 3, 4, and/or 5
+    if (sum % 3 == 0) {
+        cout << sum << " is a multiple of 3." << endl;
+    }
+    if (sum % 4 == 0) {
+        cout << sum << " is a multiple of 4." << endl;
+    }
+    if (sum % 5 == 0) {
+        cout << sum << " is a multiple of 5." << endl;
+    }
+    cout << "thank you, see you soon" << endl;
+
+    return 0;
+}

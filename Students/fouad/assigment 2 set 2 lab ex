@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std ;
+
+int main() {
+    int num, originalNum, sum = 0;
+
+    cout << "welcome" << endl;
+
+    // Read an integer number from the user
+    cout << "Enter an integer number: ";
+    cin >> num;
+
+    // Store the original number for reference
+    originalNum = num;
+
+    // Calculate the sum of its digits
+    while (num != 0) {
+        int digit = num % 10;
+        sum += digit;
+        num /= 10;
+    }
+
+    // Display the sum of digits
+    cout << "The sum of the digits is: " << sum << endl;
+
+    // Check if the sum is even or odd
+    if (sum % 2 == 0) {
+        cout << sum << " is an even number." << endl;
+    } else {
+        cout << sum << " is an odd number." << endl;
+    }
+
+    // Check if the sum is a multiple of 4 and/or 5
+    if (sum % 4 == 0) {
+        cout << sum << " is a multiple of 4." << endl;
+    }
+    if (sum % 5 == 0) {
+        cout << sum << " is a multiple of 5." << endl;
+    }
+
+    cout << "thank you , see you soon" << endl;
+
+    return 0;
+}

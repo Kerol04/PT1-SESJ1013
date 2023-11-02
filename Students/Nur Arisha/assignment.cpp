@@ -39,6 +39,8 @@ int main()
         cin >> h;
         calc(w, h);
 
+        
+
 
 
     }
