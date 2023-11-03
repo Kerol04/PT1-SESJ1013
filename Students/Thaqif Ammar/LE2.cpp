@@ -28,8 +28,7 @@ int main() {
         cout << "a multiple of 5";
     }
 
-   
-    cout << endl;
+   cout << endl;
 
     system("pause");
     return 0;

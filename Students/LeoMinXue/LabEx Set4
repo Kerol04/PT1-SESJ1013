@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int num,prod=1,digit;
+	do {
+	cout<<"Enter an integer number: ";
+	cin>>num;
+	
+	while(num!=0) {
+		int digit=num%10;
+		cout<<digit;
+	    prod=prod*digit;
+	    num=num/10;
+	    
+	    if (num!=0){
+		cout<<" * ";}
+	    }
+	
+	cout<<" = "<<prod<<endl;	
+	
+	if (prod%2==0){
+	    cout<<prod<<" is even number";}
+	else if (prod%2!=0){
+		cout<<prod<<" is odd number";}
+		
+	if (prod%3==0 && prod%5==0){
+    	cout<<" & multiples of 3 and 5";}
+	else if (prod%3==0){
+		cout<<" & multiples of 3";}
+	else if (prod%5==0){
+		cout<<" & multiples of 5";}} while(num!=0);
+
+	return 0;
+}

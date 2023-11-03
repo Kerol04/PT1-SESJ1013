@@ -2,25 +2,16 @@
 using namespace std;
 
 int main(){
-    int num;
+    int num, digit, sum=0;
     cout<<"Enter an integer number: ";
     cin>>num;
     
-    int sum=0,originalNum=num;
-    bool firstDigit = true;
-
     do{
-        int digit = num % 10;
-        sum += digit;
+        digit = num % 10;
         num /= 10;
-
-        if (!firstDigit){
-            cout<<" + ";
-        } else {
-            firstDigit = false;
-        }
-        cout << digit;
-    } while (num!=0);   
+        cout << digit << " + ";
+        sum += digit;
+    } while (num!=0); 
 
     cout << " = " << sum << endl;
     

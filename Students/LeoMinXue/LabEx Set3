@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int num,prod=1,digit;
+	cout<<"Enter an integer number: ";
+	cin>>num;
+	
+	while(num!=0) {
+		int digit=num%10;
+		cout<<digit;
+	    prod=prod*digit;
+	    num=num/10;
+	    
+	    if (num!=0){
+		cout<<" * ";}
+	    }
+	
+	cout<<" = "<<prod<<endl;	
+	cout<<prod<<" is the multiples of ";
+	
+	if (prod%4==0 && prod%5==0 && prod%7==0){
+	    cout<<" 4, 5 and 7 ";}
+	else if (prod%4==0 && prod%5==0){
+		cout<<" 4 and 5 ";}
+	else if (prod%4==0 && prod%7==0){
+		cout<<" 4 and 7 ";}
+    else if (prod%5==0 && prod%7==0){
+	    cout<<" 5 and 7 ";}
+	else if	(prod%3==0){
+		cout<<" 4 ";}
+	else if (prod%4==0){
+		cout<<" 5 ";}
+	else if(prod%5==0){
+		cout<<" 7 ";}
+
+	return 0;
+}
