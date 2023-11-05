@@ -3,13 +3,17 @@ using namespace std;
 
 int main(){
     int num, digit, sum=0;
-    cout<<"Enter an integer number: ";
-    cin>>num;
+
+    cout << "Enter an integer number: ";
+    cin >> num;
     
     do{
         digit = num % 10;
         num /= 10;
-        cout << digit << " + ";
+        cout << digit;
+        if (num!=0){
+            cout << " + ";
+        }
         sum += digit;
     } while (num!=0);   
 
