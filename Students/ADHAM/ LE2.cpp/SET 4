@@ -12,10 +12,10 @@ cin >> number;
 
 int product = 1;
 int n=number;
-while (n != 0) {
+do {
  product *= n % 10;
  n /= 10;
-}
+} while (n != 0)
 
 cout << "product of digits " << product << endl;
 if (product %2 == 0){

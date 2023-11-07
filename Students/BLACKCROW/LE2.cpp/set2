@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout << "Please provide an integer: ";
+    cin >> num;
+
+    int total = 0;
+    int tempNum = num;
+    while (tempNum != 0) {
+        total += tempNum % 10;
+        tempNum /= 10;
+    }
+
+    cout << "Sum of the individual digits: " << total << endl;
+
+    if (total % 2 == 0) {
+        cout << "The sum is an even number." << endl;
+    } else {
+        cout << "The sum is an odd number." << endl;
+    }
+
+    if (total % 4 == 0) {
+        cout << "The sum is divisible by 4." << endl;
+    }
+    if (total % 5 == 0) {
+        cout << "The sum is divisible by 5." << endl;
+    }
+
+    return 0;
+}

@@ -8,10 +8,10 @@ int main() {
 
     int product = 1;
 
-    while (number > 0) {
+    do  {
         product = product * (number % 10);
         number = number / 10;
-    }
+    }while (number > 0);
     cout << "The Product of the digits is: " << product << endl;
     if (product % 2 == 0) {
         cout << "The product is even." << endl;

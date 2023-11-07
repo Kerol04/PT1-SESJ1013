@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int integer,digit,product=1;
+    cout << "Enter an integer number: ";
+    cin >> integer;
+
+    // Calculate the product of digits
+   do{
+        digit = integer % 10;
+        integer /= 10;
+        cout << digit ;
+        if(integer!=0){
+            cout << " * " ;
+        }
+        product *= digit; 
+    }while (integer>0);
+       
+    cout << " = " << product << endl;
+
+    
+    //Check if the product of digits for the integer is an even or odd number
+    if(product%2==0){
+    	cout<< product << " is " << "even number";
+	}else{
+		cout<< product << " is " << "odd number";
+	}
+
+    // Check if the product of digits is a multiple of 3 and/or 5
+    if (product%3==0 && product%5==0){
+    	cout<<" & multiples of 3 and 5"<< endl;
+	}else if (product % 3 == 0) {
+        cout << " & multiples of 3." << endl;
+    }else if (product % 5 == 0) {
+        cout << " & multiples of 5." << endl;
+    }
+    
+    return 0;
+}

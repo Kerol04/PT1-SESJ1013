@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout << "Please provide an integer: ";
+    cin >> num;
+
+    int product = 1;
+    int tempNum = num;
+    do {
+        product *= tempNum % 10;
+        tempNum /= 10;
+    } while (tempNum != 0);
+
+    cout << "Product of the individual digits: " << product << endl;
+
+    if (product % 2 == 0) {
+        cout << "The product is an even number." << endl;
+    } else {
+        cout << "The product is an odd number." << endl;
+    }
+
+    if (product % 3 == 0) {
+        cout << "The product is divisible by 3." << endl;
+    }
+    if (product % 5 == 0) {
+        cout << "The product is divisible by 5." << endl;
+    }
+
+    return 0;
+}

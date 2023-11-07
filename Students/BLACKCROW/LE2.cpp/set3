@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout << "Please provide an integer: ";
+    cin >> num;
+
+    int product = 1;
+    int tempNum = num;
+    while (tempNum != 0) {
+        product *= tempNum % 10;
+        tempNum /= 10;
+    }
+
+    cout << "Product of the individual digits: " << product << endl;
+
+    if (product % 4 == 0) {
+        cout << "The product is divisible by 4." << endl;
+    }
+    if (product % 5 == 0) {
+        cout << "The product is divisible by 5." << endl;
+    }
+    if (product % 7 == 0) {
+        cout << "The product is divisible by 7." << endl;
+    }
+
+    return 0;
+}

@@ -10,10 +10,10 @@ int main() {
 
     int sumOfDigits = 0;
 
-    while (number > 0) {
+    do {
         sumOfDigits = sumOfDigits + (number % 10);
         number = number / 10;
-    }
+    } while (number > 0);
 
     cout << "Sum of digits: " << sumOfDigits << endl;
 

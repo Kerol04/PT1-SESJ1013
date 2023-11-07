@@ -9,12 +9,16 @@ int main()
 //user input of integer
     cout << "Enter an integer number: ";
     cin >> num;
- do{
+
+//pre-test loop
+ while(num!=0){ 
         digit = num % 10; //fnd the remainder
         num = num / 10; //find the remaining integer
-        cout << digit << " * ";
+        cout << digit;
+        if(num>0)
+        cout << " * ";
         prod *= digit; //find product of digits
-    }while(num!=0);
+    }
 
       cout << " = " << prod << endl;
 

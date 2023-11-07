@@ -13,12 +13,13 @@ int main() {
     int originalNum = num;  // Store the original number for displaying the result
 
     // Calculate the product of digits
-    while (num != 0) {
+     do{
         int digit = num % 10;  // Get the last digit
         product *= digit;     // Update the product
         num /= 10;            // Remove the last digit
-    }
 
+    }
+     while (num != 0);
     // Display the original number and its digit product
     cout << "The product of digits for " << originalNum << " is: " << product << endl;
 
