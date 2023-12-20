@@ -1,0 +1,34 @@
+#include <iostream>
+
+int findSmallestIndex(int array[], int size) {
+    if (size <= 0) {
+        // Handle the case of an empty array
+        cerr << "Error: Empty array." << endl;
+        return -1; // indicating an error
+    }
+
+    int smallestIndex = 0; // Assume the first element is the smallest
+
+    for (int i = 1; i < size; ++i) {
+        if (array[i] < array[smallestIndex]) {
+            // Found a smaller element, update the smallestIndex
+            smallestIndex = i;
+        }
+    }
+
+    return smallestIndex;
+}
+
+int main() {
+    int array[] = {1, 2, 4, 5, 10, 100, 2, -22};
+
+    // Test the function
+    int resultIndex = findSmallestIndex(array, sizeof(array) / sizeof(int));
+
+    if (resultIndex != -1) {
+        cout << "The smallest element is at index: " << resultIndex << endl;
+        cout << "The smallest element is: " << array[resultIndex] << endl;
+    }
+
+    return 0;
+}

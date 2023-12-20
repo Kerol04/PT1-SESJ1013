@@ -1,0 +1,103 @@
+#include <iostream>
+#define ROW 4
+#define COL 3 
+using namespace std;
+
+// Function declarations
+int getTotalMedalsCountry3(int medals[ROW][COL]);
+int getMaxMedals(int medals[ROW][COL]);
+int getMinMedals(int medals[ROW][COL]);
+int getMaxGoldMedals(int medals[ROW][COL]);
+int getTotalBronzeMedals(int medals[ROW][COL]);
+
+// Function definitions
+int getTotalMedalsCountry3(int medals[ROW][COL])
+{
+    int sum = 0;
+    for (int i = 0; i < COL; i++)
+    {
+        sum += medals[2][i];
+    }
+    return sum;
+}
+
+int getMaxMedals(int medals[ROW][COL])
+{
+    int maxMedals = medals[0][0];
+    for (int i = 0; i < ROW; i++)
+    {
+        for (int j = 0; j < COL; j++)
+        {
+            if (medals[i][j] > maxMedals)
+            {
+                maxMedals = medals[i][j];
+            }
+        }
+    }
+    return maxMedals;
+}
+
+int getMinMedals(int medals[ROW][COL])
+{
+    int minMedals = medals[0][0];
+    for (int i = 0; i < ROW; i++)
+    {
+        for (int j = 0; j < COL; j++)
+        {
+            if (medals[i][j] < minMedals)
+            {
+                minMedals = medals[i][j];
+            }
+        }
+    }
+    return minMedals;
+}
+
+int getMaxGoldMedals(int medals[ROW][COL])
+{
+    int maxGold = medals[0][0];
+    for (int i = 1; i < ROW; i++)
+    {
+        if (medals[i][0] > maxGold)
+        {
+            maxGold = medals[i][0];
+        }
+    }
+    return maxGold;
+}
+
+int getTotalBronzeMedals(int medals[ROW][COL])
+{
+    int totalBronze = 0;
+    for (int i = 0; i < ROW; i++)
+    {
+        totalBronze += medals[i][2];
+    }
+    return totalBronze;
+}
+
+int main()
+{
+    int medals[ROW][COL];
+    
+    //User inputs for medals won by each country
+    for (int i = 0; i < ROW; i++)
+    {
+        cout << "Enter the number of medals for Country " << i + 1 << endl;
+        cout << "Gold: ";
+        cin >> medals[i][0];
+        cout << "Silver: ";
+        cin >> medals[i][1];
+        cout << "Bronze: ";
+        cin >> medals[i][2];
+    }
+
+    // Function calls 
+    cout << "Total number of medals won by Country 3 = " << getTotalMedalsCountry3(medals) << endl;
+    cout << "Largest number of medals won = " << getMaxMedals(medals) << endl;
+    cout << "Smallest number of medals won = " << getMinMedals(medals) << endl;
+    cout << "Highest number of gold medals won = " << getMaxGoldMedals(medals) << endl;
+    cout << "Total number of bronze medals won = " << getTotalBronzeMedals(medals) << endl;
+
+    return 0;
+}

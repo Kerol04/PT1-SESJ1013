@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int average1(int a1[], int SIZE)
+{
+    int avg1=0;
+    for(int count=0; count<SIZE; count++)
+       {avg1+=a1[count];}
+       avg1/=SIZE;
+       cout<<avg1<<endl;
+    
+    return avg1;
+}
+
+double average2(double a2[], int SIZE)
+{
+    double avg2=0.0;
+    for(int count=0; count<SIZE; count++)
+       {avg2+=a2[count];}
+       avg2/=SIZE;
+       cout<<avg2<<endl;
+    
+    return avg2;
+}
+
+    
+int main()
+{
+    const int SIZE=6;
+    
+    int a1[SIZE]={1,2,3,4,5,6};
+    double a2[SIZE]={6.0,4.4,1.9,2.9,3.4,3.5};
+    
+    int averageInt=average1(a1,SIZE);
+    double averageDouble=average2(a2,SIZE);
+    
+    return 0;
+}

@@ -1,25 +1,26 @@
-       #include<iostream>
+//SET 2
+
+#include<iostream>
 using namespace std;
 int main()
 {
     int num, baki, sum=0;
     cout<<"Enter an integer number: ";
     cin>>num;
-do    {
+ 
+     
+     while(num>0){
+        
         baki = num%10;
-        
-        
+        sum = sum+baki;
         num = num/10;
           cout << baki;
+
           if (num>0){
               cout << " + ";
           }
-        sum = sum+baki;
-  
-    
-    }    while(num!=0);
+    }
 
-    
         cout << " = "<<sum<<endl;
 
 if (sum%2==0 && sum%4==0 && sum%5==0){

@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+
+int findSmallestIndex(int array[], int size) {
+    if (size <= 0) {       
+        cerr << "Error: Invalid array size." << endl;
+        return -1; 
+    }
+
+    int smallestIndex = 0; 
+
+    for (int i = 1; i < size; ++i) {
+        if (array[i] < array[smallestIndex]) {
+            smallestIndex = i;
+        }
+    }
+
+    return smallestIndex;
+}
+
+int main() {
+    int intArray[] = {1, 2, 4, 5, 10, 100, 2, -22};
+    int size = sizeof(intArray) / sizeof(int);
+
+    
+    int smallestIndex = findSmallestIndex(intArray, size);
+
+    if (smallestIndex != -1) {
+        cout << "Index of the smallest element: " << smallestIndex << endl;
+        cout << "Smallest element: " << intArray[smallestIndex] << endl;
+    } else {
+        cerr << "Unable to find the smallest element." << endl;
+    }
+
+    return 0;
+}

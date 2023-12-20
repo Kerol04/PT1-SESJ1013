@@ -1,0 +1,32 @@
+#include <iostream>
+
+int average(int array[], int size) {
+    int sum = 0;
+    for (int i = 0; i < size; ++i) {
+        sum += array[i];
+    }
+    return sum / size;
+}
+
+double average(int array[], int size) {
+    double sum = 0.0;
+    for (int i = 0; i < size; ++i) {
+        sum += array[i];
+    }
+    return sum / size;
+}
+
+int main() {
+    int intArray[] = {1, 2, 3, 4, 5, 6};
+    double doubleArray[] = {6.0, 4.4, 1.9, 2.9, 3.4, 3.5};
+
+    // Test the integer average function
+    int intAverageResult = average(intArray, sizeof(intArray) / sizeof(int));
+    cout << "Average of integer array: " << intAverageResult << endl;
+
+    
+    double doubleAverageResult = average(doubleArray, sizeof(doubleArray) / sizeof(double));
+    cout << "Average of double array: " << doubleAverageResult << endl;
+
+    return 0;
+}

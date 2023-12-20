@@ -7,7 +7,7 @@ int main(){
     cout << "Enter an integer number: ";
     cin >> num;
     
-    do{
+    while (num!=0){
         digit = num % 10;
         num /= 10;
         cout << digit;
@@ -15,7 +15,7 @@ int main(){
             cout << " + ";
         }
         sum += digit;
-    } while (num!=0);  
+    }   
 
     cout << " = " << sum << endl;
     cout << sum;

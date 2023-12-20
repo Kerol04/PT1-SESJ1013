@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int smallest_element(int a[], int SIZE)
+{
+    int smallest=0;
+    for(int count=1; count<SIZE; count++){
+        if(a[count]<a[smallest]){
+            smallest=count;
+        }
+        
+    }
+    return smallest;
+}
+    
+int main()
+{
+    const int SIZE=8;
+    
+    int a1[SIZE]={1,2,4,5,10,100,2,-2};
+    
+    int smallest=smallest_element(a1,SIZE);
+    cout<<"The smallest element : "<<a1[smallest]<<endl;
+    
+    return 0;
+}
