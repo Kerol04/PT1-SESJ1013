@@ -1,0 +1,80 @@
+#include <iostream>
+#include <limits> 
+#include <climits>
+using namespace std;
+
+const int NUM_COUNTRIES = 4;
+const int NUM_MEDALS = 3;
+
+void readMedals(int medals[NUM_COUNTRIES][NUM_MEDALS]) {
+    for (int i = 0; i < NUM_COUNTRIES; i++) {
+        cout << "Enter the number of medals for Country " << i + 1 << endl;
+        cout << "Gold: ";
+        cin >> medals[i][0];
+        cout << "Silver: ";
+        cin >> medals[i][1];
+        cout << "Bronze: ";
+        cin >> medals[i][2];
+    }
+}
+
+int totalMedalsCountry(const int medals[NUM_COUNTRIES][NUM_MEDALS], int countryIndex) {
+    int total = 0;
+    for (int i = 0; i < NUM_MEDALS; i++) {
+        total += medals[countryIndex][i];
+    }
+    return total;
+}
+
+int largestMedalCount(const int medals[NUM_COUNTRIES][NUM_MEDALS]) {
+    int largest = 0;
+    for (int i = 0; i < NUM_COUNTRIES; i++) {
+        int total = 0;
+        for (int j = 0; j < NUM_MEDALS; j++) {
+            total += medals[i][j];
+        }
+        largest = max(largest, total);
+    }
+    return largest;
+}
+
+int smallestMedalCount(const int medals[NUM_COUNTRIES][NUM_MEDALS]) {
+    int smallest = INT_MAX;
+    for (int i = 0; i < NUM_COUNTRIES; i++) {
+        int total = 0;
+        for (int j = 0; j < NUM_MEDALS; j++) {
+            total += medals[i][j];
+        }
+        smallest = min(smallest, total);
+    }
+    return smallest;
+}
+
+int highestGoldMedals(const int medals[NUM_COUNTRIES][NUM_MEDALS]) {
+    int highest = 0;
+    for (int i = 0; i < NUM_COUNTRIES; i++) {
+        highest = max(highest, medals[i][0]);
+    }
+    return highest;
+}
+
+int totalBronzeMedals(const int medals[NUM_COUNTRIES][NUM_MEDALS]) {
+    int total = 0;
+    for (int i = 0; i < NUM_COUNTRIES; i++) {
+        total += medals[i][2];
+    }
+    return total;
+}
+
+int main() {
+    int medals[NUM_COUNTRIES][NUM_MEDALS];
+    readMedals(medals);
+
+    cout << "Total medals won by Country 3: " << totalMedalsCountry(medals, 2) << endl;
+    cout << "Largest number of medals won: " << largestMedalCount(medals) << endl;
+    cout << "Smallest number of medals won: " << smallestMedalCount(medals) << endl;
+    cout << "Highest number of gold medals won: " << highestGoldMedals(medals) << endl;
+    cout << "Total number of bronze medals won: " << totalBronzeMedals(medals) << endl;
+
+    return 0;
+}
