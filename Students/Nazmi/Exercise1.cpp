@@ -5,8 +5,7 @@ using namespace std;
 int main() {
     int integer; 
     double decinum;
-    char singleCharacter;
-    char characters [21];
+    char singleCharacter, characters [21];
 
 
     cout << "Enter an integer: ";
@@ -20,5 +19,6 @@ int main() {
 
     cout << "Enter an array of characters: ";
     cin >> characters;
+    
     return 0;
 }
