@@ -1,0 +1,36 @@
+/* Lab 1 Question: 
+Solve the problem. Add array of characters to the output.
+Sample of output: 
+Enter an integer: 7
+Enter a decimal number: 2.25
+Enter a single character : R 
+Enter an array of characters: Programming */
+
+
+#include <iostream>
+int main() {
+    int integerNumber;
+    double decimalNumber;
+    char singleCharacter;
+    char characterArray[50]; // Assuming a maximum length 50 characters for the array
+
+    std::cout << "Enter an integer: ";
+    std::cin >> integerNumber;
+
+    std::cout << "Enter a decimal number: ";
+    std::cin >> decimalNumber;
+
+    std::cout << "Enter a single character: ";
+    std::cin >> singleCharacter;
+
+    std::cout << "Enter an array of characters: ";
+    std::cin >> characterArray;
+
+    std::cout << "\nSample of output:\n";
+    std::cout << "Integer: " << integerNumber << "\n";
+    std::cout << "Decimal number: " << decimalNumber << "\n";
+    std::cout << "Single character: " << singleCharacter << "\n";
+    std::cout << "Array of characters: " << characterArray << "\n";
+
+    return 0;
+}

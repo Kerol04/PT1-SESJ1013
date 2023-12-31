@@ -1,89 +1,46 @@
 #include <iostream>
-#define countrynum 4
-#define medaltype 3
-
-void readMedal(int Medal[countrynum][medaltype]);
-int sumMedalCountry3(int Medal[countrynum][medaltype]);
-int findLargestMedal(int Medal[countrynum][medaltype]);
-int findSmallestMedal(int Medal[countrynum][medaltype]);
-int highestGoldMedal(int Medal[countrynum][medaltype]);
-int totalBronzeMedal(int Medal[countrynum][medaltype]);
+int average(int array[], int size);
+double average(double array[], int size);
 
 using namespace std;
 
 int main() {
-    int Medal[countrynum][medaltype];
-
-    readMedal(Medal);
     
+    const int size = 6;
+    int array1[size] = {1,2,3,4,5,6}, avrgArray1;
+    double array2[size] = {6.0,4.4,1.9,2.9,3.4,3.5}, avrgArray2;
+    
+    
+    //average for array1
+    avrgArray1 = average(array1,size);
+    cout << "Average for array with integer type number: " << avrgArray1 << endl;
+
+    //average for array2
+    avrgArray2 = average(array2,size);
+    cout << "Average for array with double type number: " << avrgArray2 <<endl;
   
-
-    cout << "The Total Medals Won by Country 3: " << sumMedalCountry3(Medal) << endl;
-    cout << "The Largest Number of Medals won: " << findLargestMedal(Medal) << endl;
-    cout << "The Smallest Number of Medals won: " << findSmallestMedal(Medal) << endl;
-    cout << "The Highest Number of Gold medals won: " << highestGoldMedal(Medal) << endl;
-    cout << "The Total Number of Bronze medals won: " << totalBronzeMedal(Medal) << endl;
-
     return 0;
 }
 
-void readMedal(int Medal[countrynum][medaltype]) {
-    for (int i = 0; i < countrynum; i++) {
-        cout << "Enter the Number of Medal for Country " << i + 1 << endl;
-        cout << "Gold: ";
-        cin >> Medal[i][0];
-        cout << "Silver: ";
-        cin >> Medal[i][1];
-        cout << "Bronze: ";
-        cin >> Medal[i][2];
-        cout << "\n";
+int average(int array[], int size){
+    
+    int i, sum = 0;
+    
+    for (i=0; i<size; i++){
+        sum += array[i];
     }
+    
+    return sum/size;
 }
 
-
-int sumMedalCountry3(int Medal[countrynum][medaltype]) {
-    int sum = 0;
-    for (int j = 0; j < medaltype; j++) {
-        sum += Medal[2][j];
+double average(double array[], int size){
+    
+    int i;
+    double sum = 0;
+    
+    for (i=0; i<size; i++){
+        sum += array[i];
     }
-    return sum;
-}
-
-int findLargestMedal(int Medal[countrynum][medaltype]) {
-    int largest = Medal[0][0];
-    for (int i = 0; i < countrynum; i++) {
-        for (int j = 0; j < medaltype; j++) {
-            if (Medal[i][j] > largest)
-                largest = Medal[i][j];
-        }
-    }
-    return largest;
-}
-
-int findSmallestMedal(int Medal[countrynum][medaltype]) {
-    int smallest = Medal[0][0];
-    for (int i = 0; i < countrynum; i++) {
-        for (int j = 0; j < medaltype; j++) {
-            if (Medal[i][j] < smallest)
-                smallest = Medal[i][j];
-        }
-    }
-    return smallest;
-}
-
-int highestGoldMedal(int Medal[countrynum][medaltype]) {
-    int highest = Medal[0][0];
-    for (int i = 0; i < countrynum; i++) {
-        if (Medal[i][0] > highest)
-            highest = Medal[i][0];
-    }
-    return highest;
-}
-
-int totalBronzeMedal(int Medal[countrynum][medaltype]) {
-    int total = 0;
-    for (int i = 0; i < countrynum; i++) {
-        total += Medal[i][2];
-    }
-    return total;
+   
+    return sum/size;
 }

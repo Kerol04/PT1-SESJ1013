@@ -57,26 +57,14 @@ int totalBronzeMedals(const int medals[COUNTRIES][MEDAL_TYPES]) {
 }
 
 int main() {
-    // Example data
     int medalsData[COUNTRIES][MEDAL_TYPES];
+    readMedals(medalsData);
 
-    // Uncomment the following line to take input from the user
-    // readMedals(medalsData);
-
-    // Example data for testing
-    int exampleData[COUNTRIES][MEDAL_TYPES] = {
-        {129, 257, 590},
-        {120, 279, 394},
-        {115, 290, 123},
-        {98, 209, 112},
-    };
-
-    cout << "Total number of medals won by Country 3: " << totalMedalsCountry3(exampleData) << endl;
-    cout << "Largest number of medals won: " << largestMedals(exampleData) << endl;
-    cout << "Smallest number of medals won: " << smallestMedals(exampleData) << endl;
-    cout << "Highest number of gold medals won: " << highestGoldMedals(exampleData) << endl;
-    cout << "Total number of bronze medals won: " << totalBronzeMedals(exampleData) << endl;
+    cout << "Total number of medals won by Country 3: " << totalMedalsCountry3(medalsData) << endl;
+    cout << "Largest number of medals won: " << largestMedals(medalsData) << endl;
+    cout << "Smallest number of medals won: " << smallestMedals(medalsData) << endl;
+    cout << "Highest number of gold medals won: " << highestGoldMedals(medalsData) << endl;
+    cout << "Total number of bronze medals won: " << totalBronzeMedals(medalsData) << endl;
 
     return 0;
 }
-

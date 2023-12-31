@@ -1,0 +1,72 @@
+#include <iostream>
+using namespace std;
+
+void input_medals(int medals[5][3], int &i) {
+    cout << "\nCOUNTRY's " << i + 1 << " MEDALS " << endl;
+    for (int j = 0; j < 3; j++) {
+        if (j == 0) {
+            cout << "GOLD: ";
+            cin >> medals[i][j];
+        }
+        if (j == 1) {
+            cout << "SILVER: ";
+            cin >> medals[i][j];
+        }
+        if (j == 2) {
+            cout << "BRONZE: ";
+            cin >> medals[i][j];
+        }
+    }
+    i++;
+}
+
+int calculate_total(int medals[5][3], int i) {
+    int total = 0;
+    for (int j = 0; j < 3; j++) {
+        total = total + medals[i][j];
+    }
+    return total;
+}
+
+int get_medal_total(int medals[5][3], int country) {
+    int total = 0;
+    for (int i = 0; i < 5; i++) {
+        total += calculate_total(medals, i);
+    }
+    return total;
+}
+
+int main() {
+    int medals[5][3];
+    int total = 0, largest = 0, smallest = 0, high_gold = 0, total_bronze = 0;
+
+    int i = -1;
+    while (i < 4) {
+        input_medals(medals, i);
+    }
+
+    cout << "\t\tGold\t\tSilver\t\tBronze" << endl;
+    for (int i = 0; i < 5; i++) {
+        cout << "Country " << i + 1;
+        for (int j = 0; j < 3; j++) {
+            cout << "\t" << medals[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+    for (int i = 0; i < 5; i++) {
+        total += calculate_total(medals, i);
+        largest = max(largest, calculate_total(medals, i));
+        smallest = min(smallest, calculate_total(medals, i));
+        high_gold = max(high_gold, medals[i][0]);
+        total_bronze += medals[i][2];
+    }
+
+    cout << "\nTotal number of medals won: " << total << endl;
+    cout << "Largest number of medals won: " << largest << endl;
+    cout << "Smallest number of medals won: " << smallest << endl;
+    cout << "Highest number of gold medals won: " << high_gold << endl;
+    cout << "Total number of bronze medals won: " << total_bronze << endl;
+
+    return 0;
+}

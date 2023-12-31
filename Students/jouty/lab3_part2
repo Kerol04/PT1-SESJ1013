@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int findSmallestElement(int arr[], int size);
+
+int main () 
+{ 
+    const int arraySize=8;
+    int inputArray[]={1,2,4,5,10,100,2,-22};
+
+    cout<<"Index of the smallest element : "<< findSmallestElement(inputArray,arraySize) << endl; 
+    return 0; 
+} 
+
+int findSmallestElement(int inputArray[], int arraySize) 
+{ 
+    int smallest = inputArray[0]; 
+    int index =0; 
+    for(int count=1;count<arraySize;count++){ 
+        if (inputArray[count]<smallest) 
+        { 
+            smallest=inputArray[count]; 
+            index=count; 
+        } 
+    } 
+    return index; 
+}
