@@ -21,12 +21,17 @@ store them inside the medals array.
 #include <iostream>
 using namespace std;
 
+int main(){
+
+    int medal [row][column];
+    inputMedal(medal);
+
 
     const int row = 5, column = 3;
     const char Typemedal[][10]={"Gold","Silver","Bronze"};
 
      void inputMedal(int medal[row][column]){
-        cout << "Insert the numbers of meda for each country: " <<endl;
+        cout << "Insert the numbers of medal for each country: " <<endl;
 
         for (int i = 0; i < row; i++){
             cout << "Country" << " "<<i+1<<endl;
@@ -37,7 +42,13 @@ using namespace std;
             }
         }
       }
-
+          cout << "Total number of medals won by country 3: " << NumMedalC3(medal) <<endl;
+    cout << "The largest number of medals won: " << LargestMedal(medal) <<endl;
+    cout << "The smallest number of medals won: " << SmallestMedal(medal) <<endl;
+    cout << "The highest number of gold medal won: " << highestGold(medal) <<endl;
+    cout << "The total number of bronze medal won: " << TotalBronze(medal) <<endl;
+    return 0;
+}
 
 int NumMedalC3 (int medal[row][column]){
 
@@ -100,17 +111,5 @@ int TotalBronze (int medal[row][column]){
 }
 
 
-int main(){
 
-    int medal [row][column];
-    inputMedal(medal);
-
-    cout << "Ttotal number of medals won by country 3: " << NumMedalC3(medal) <<endl;
-    cout << "The largest number of medals won: " << LargestMedal(medal) <<endl;
-    cout << "The smallest number of medals won: " << SmallestMedal(medal) <<endl;
-    cout << "The highest number of gold medal won: " << highestGold(medal) <<endl;
-    cout << "The total number of bronze medal won: " << TotalBronze(medal) <<endl;
-
-    return 0;
-}
 
